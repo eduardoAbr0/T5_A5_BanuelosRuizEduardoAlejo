@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
-    android:background="#39C5BB"
+    android:background="#2C3E50 "
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
@@ -13,18 +13,22 @@
         android:layout_width="104dp"
         android:layout_height="45dp"
         android:layout_marginTop="236dp"
-        android:layout_marginEnd="1dp"
+        android:layout_marginEnd="12dp"
         android:ems="10"
         android:inputType="numberDecimal"
+        android:textColor="#BDC3C7"
+        android:textSize="25sp"
         app:layout_constraintEnd_toStartOf="@+id/spinnerGrados1"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Spinner
         android:id="@+id/spinnerGrados1"
-        android:layout_width="150dp"
+        android:layout_width="137dp"
         android:layout_height="45dp"
         android:layout_marginTop="236dp"
-        android:layout_marginEnd="1dp"
+        android:layout_marginEnd="4dp"
+        android:textColor="#ECF0F1"
+        android:textSize="25sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -32,10 +36,12 @@
         android:id="@+id/txt_2"
         android:layout_width="100dp"
         android:layout_height="45dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginBottom="377dp"
-        android:text="@string/txt_2"
+        android:layout_marginStart="4dp"
+        android:layout_marginBottom="376dp"
         android:gravity="center"
+        android:text="@string/txt_2"
+        android:textColor="#ECF0F1 "
+        android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -43,31 +49,37 @@
         android:id="@+id/txt_1"
         android:layout_width="100dp"
         android:layout_height="45dp"
-        android:layout_marginStart="24dp"
+        android:layout_marginStart="4dp"
         android:layout_marginTop="236dp"
         android:gravity="center"
         android:text="@string/txt_1"
+        android:textColor="#ECF0F1"
+        android:textSize="25sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Spinner
         android:id="@+id/spinnerGrados2"
-        android:layout_width="150dp"
+        android:layout_width="200dp"
         android:layout_height="45dp"
-        android:layout_marginBottom="377dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginBottom="376dp"
+        android:textColor="#ECF0F1"
+        android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/txt_R"
         app:layout_constraintStart_toEndOf="@+id/txt_2" />
 
     <TextView
         android:id="@+id/txt_R"
-        android:textStyle="bold"
-        android:layout_width="100dp"
-        android:layout_height="45dp"
-        android:layout_marginEnd="37dp"
-        android:layout_marginBottom="377dp"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="308dp"
         android:gravity="center"
         android:text="@string/txt_R"
+        android:textColor="#BDC3C7"
+        android:textSize="30sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
