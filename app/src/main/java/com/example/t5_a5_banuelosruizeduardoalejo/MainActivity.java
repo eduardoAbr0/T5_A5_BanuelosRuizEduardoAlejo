@@ -7,6 +7,7 @@ import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -69,6 +70,16 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
         txtR.setText(String.valueOf(log.fahrenheitCelsius(c)));
     }
+    public void fahrenheitKelvin(){
+        double c = Double.parseDouble(txtIngreso.getText().toString());
+
+        txtR.setText(String.valueOf(log.fahrenheitKelvin(c)));
+    }
+    public void fahrenheitRankine(){
+        double c = Double.parseDouble(txtIngreso.getText().toString());
+
+        txtR.setText(String.valueOf(log.fahrenheitRank(c)));
+    }
 
     //CONVERSIONES KELVIN
     public void kelvinCelsius(){
@@ -76,12 +87,22 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
         txtR.setText(String.valueOf(log.kelvinCelsius(c)));
     }
+    public void kelvinFahrenheit(){
+        double c = Double.parseDouble(txtIngreso.getText().toString());
+
+        txtR.setText(String.valueOf(log.kelvinFahrenheit(c)));
+    }
 
     //CONVERSIONES RANKINE
     public void rankCelsius(){
         double c = Double.parseDouble(txtIngreso.getText().toString());
 
         txtR.setText(String.valueOf(log.rankineCelsius(c)));
+    }
+    public void rankFahrenheit(){
+        double c = Double.parseDouble(txtIngreso.getText().toString());
+
+        txtR.setText(String.valueOf(log.rankineFahrenheit(c)));
     }
 
 
@@ -115,6 +136,29 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             //CELSIUS A RANK
             else if (id2 == 3) {
                 celsiusRank();
+            }else{
+                Toast.makeText(this,"Conversion a el mismo tipo.",Toast.LENGTH_SHORT).show();
+            }
+        }
+        //CASO FAHRENHEIT
+        else if (id1 == 1 || id2 == 1) {
+            //KELVIN A FAHRENHEIT
+            if (id1 == 2) {
+                kelvinFahrenheit();
+            }
+            //FAHRENHEIT A KELVIN
+            else if (id2 == 2) {
+                fahrenheitKelvin();
+            }
+            //RANK A FAHRENHEIT
+            else if (id1 == 3){
+                rankFahrenheit();
+            }
+            //FAHRENHEIT A RANK
+            else if (id2 == 3) {
+                fahrenheitRankine();
+            }else{
+                Toast.makeText(this,"Conversion a el mismo tipo.",Toast.LENGTH_SHORT).show();
             }
         }
     }

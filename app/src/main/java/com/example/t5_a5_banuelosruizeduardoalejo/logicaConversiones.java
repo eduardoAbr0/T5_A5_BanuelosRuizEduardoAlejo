@@ -30,6 +30,18 @@ public class logicaConversiones {
         return cel;
     }
 
+    //FAHRENHEIT A KELVIN
+    public double fahrenheitKelvin(double fah){
+        double kel = (fah-32)*5/9+273.15;
+        return kel;
+    }
+
+    //FAHRENHEIT A RANK
+    public double fahrenheitRank(double fah){
+        double rank = fah+459.67;
+        return rank;
+    }
+
     //KELVIN A
 
     //KELVIN A CELSIUS
@@ -38,11 +50,23 @@ public class logicaConversiones {
         return cel;
     }
 
+    //KELVIN A FAHRENHEIT
+    public double kelvinFahrenheit(double kel){
+        double fah = (kel-273.15) * 9/5 + 32;
+        return fah;
+    }
+
     //RANKINE A
 
     //RANKINE A CELSIUS
     public double rankineCelsius(double rank){
         double cel = (rank-491.67) * 5/9;
         return cel;
+    }
+
+    //RANKINE A FAHRENHEIT
+    public double rankineFahrenheit(double rank){
+        double fah = rank-458.67;
+        return fah;
     }
 }
