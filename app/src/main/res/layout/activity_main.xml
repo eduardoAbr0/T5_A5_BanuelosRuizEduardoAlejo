@@ -3,6 +3,71 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
+    android:background="#39C5BB"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"/>
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/editTextNumberDecimal2"
+        android:layout_width="104dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="236dp"
+        android:layout_marginEnd="1dp"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        app:layout_constraintEnd_toStartOf="@+id/spinnerGrados1"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Spinner
+        android:id="@+id/spinnerGrados1"
+        android:layout_width="150dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="236dp"
+        android:layout_marginEnd="1dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txt_2"
+        android:layout_width="100dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginBottom="377dp"
+        android:text="@string/txt_2"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/txt_1"
+        android:layout_width="100dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="236dp"
+        android:gravity="center"
+        android:text="@string/txt_1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Spinner
+        android:id="@+id/spinnerGrados2"
+        android:layout_width="150dp"
+        android:layout_height="45dp"
+        android:layout_marginBottom="377dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/txt_R"
+        app:layout_constraintStart_toEndOf="@+id/txt_2" />
+
+    <TextView
+        android:id="@+id/txt_R"
+        android:textStyle="bold"
+        android:layout_width="100dp"
+        android:layout_height="45dp"
+        android:layout_marginEnd="37dp"
+        android:layout_marginBottom="377dp"
+        android:gravity="center"
+        android:text="@string/txt_R"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
