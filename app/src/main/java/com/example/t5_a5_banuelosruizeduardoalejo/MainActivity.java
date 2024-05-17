@@ -92,6 +92,11 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
         txtR.setText(String.valueOf(log.kelvinFahrenheit(c)));
     }
+    public void kelvinRank(){
+        double c = Double.parseDouble(txtIngreso.getText().toString());
+
+        txtR.setText(String.valueOf(log.kelvinRank(c)));
+    }
 
     //CONVERSIONES RANKINE
     public void rankCelsius(){
@@ -104,6 +109,11 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
         txtR.setText(String.valueOf(log.rankineFahrenheit(c)));
     }
+    public void rankKelvin(){
+        double c = Double.parseDouble(txtIngreso.getText().toString());
+
+        txtR.setText(String.valueOf(log.rankineKelvin(c)));
+    }
 
 
     @Override
@@ -111,55 +121,75 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         int id1 = spinner1.getSelectedItemPosition();
         int id2 = spinner2.getSelectedItemPosition();
 
-        //CASO PARA CELSIUS
-        if (id1 == 0 || id2 == 0){
-            //FAHRENHEIT A CELSIUS
-            if (id1 == 1){
-                fahrenhetiCelsius();
+
+        if (!txtIngreso.getText().toString().isEmpty()) {
+            //CASO PARA CELSIUS
+            if (id1 == 0 || id2 == 0) {
+                //FAHRENHEIT A CELSIUS
+                if (id1 == 1) {
+                    fahrenhetiCelsius();
+                }
+                //CELSIUS A FAHRENHEIT
+                else if (id2 == 1) {
+                    celsiusFahrenheit();
+                }
+                //KELVIN A CELSIUS
+                else if (id1 == 2) {
+                    kelvinCelsius();
+                }
+                //CELSIUS A KELVIN
+                else if (id2 == 2) {
+                    celsiusKelvin();
+                }
+                //RANK A CELSIUS
+                else if (id1 == 3) {
+                    rankCelsius();
+                }
+                //CELSIUS A RANK
+                else if (id2 == 3) {
+                    celsiusRank();
+                } else {
+                    Toast.makeText(this, "Conversion a el mismo tipo.", Toast.LENGTH_SHORT).show();
+                }
             }
-            //CELSIUS A FAHRENHEIT
-            else if (id2 == 1){
-                celsiusFahrenheit();
+            //CASO FAHRENHEIT
+            else if (id1 == 1 || id2 == 1) {
+                //KELVIN A FAHRENHEIT
+                if (id1 == 2) {
+                    kelvinFahrenheit();
+                }
+                //FAHRENHEIT A KELVIN
+                else if (id2 == 2) {
+                    fahrenheitKelvin();
+                }
+                //RANK A FAHRENHEIT
+                else if (id1 == 3) {
+                    rankFahrenheit();
+                }
+                //FAHRENHEIT A RANK
+                else if (id2 == 3) {
+                    fahrenheitRankine();
+                } else {
+                    Toast.makeText(this, "Conversion a el mismo tipo.", Toast.LENGTH_SHORT).show();
+                }
             }
-            //KELVIN A CELSIUS
-            else if (id1 == 2) {
-                kelvinCelsius();
+            //CASO KELVIN
+            else if (id1 == 2 || id2 == 2) {
+                //RANK A KELVIN
+                if (id1 == 3) {
+                    rankKelvin();
+                }
+                //KELVIN A RANK
+                else if (id2 == 3) {
+                    kelvinRank();
+                } else {
+                    Toast.makeText(this, "Conversion a el mismo tipo.", Toast.LENGTH_SHORT).show();
+                }
+            } else if (id1 == 3 && id2 == 3) {
+                Toast.makeText(this, "Conversion a el mismo tipo.", Toast.LENGTH_SHORT).show();
             }
-            //CELSIUS A KELVIN
-            else if (id2 == 2) {
-                celsiusKelvin();
-            }
-            //RANK A CELSIUS
-            else if (id1 == 3){
-                rankCelsius();
-            }
-            //CELSIUS A RANK
-            else if (id2 == 3) {
-                celsiusRank();
-            }else{
-                Toast.makeText(this,"Conversion a el mismo tipo.",Toast.LENGTH_SHORT).show();
-            }
-        }
-        //CASO FAHRENHEIT
-        else if (id1 == 1 || id2 == 1) {
-            //KELVIN A FAHRENHEIT
-            if (id1 == 2) {
-                kelvinFahrenheit();
-            }
-            //FAHRENHEIT A KELVIN
-            else if (id2 == 2) {
-                fahrenheitKelvin();
-            }
-            //RANK A FAHRENHEIT
-            else if (id1 == 3){
-                rankFahrenheit();
-            }
-            //FAHRENHEIT A RANK
-            else if (id2 == 3) {
-                fahrenheitRankine();
-            }else{
-                Toast.makeText(this,"Conversion a el mismo tipo.",Toast.LENGTH_SHORT).show();
-            }
+        }else{
+            Toast.makeText(this, "Ingresa cifra a convertir.", Toast.LENGTH_SHORT).show();
         }
     }
 

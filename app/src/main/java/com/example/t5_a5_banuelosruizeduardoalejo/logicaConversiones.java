@@ -56,6 +56,12 @@ public class logicaConversiones {
         return fah;
     }
 
+    //KELVIN A RANK
+    public double kelvinRank(double kel){
+        double rank =kel*1.8;
+        return rank;
+    }
+
     //RANKINE A
 
     //RANKINE A CELSIUS
@@ -68,5 +74,11 @@ public class logicaConversiones {
     public double rankineFahrenheit(double rank){
         double fah = rank-458.67;
         return fah;
+    }
+
+    //RANK A KELVIN
+    public double rankineKelvin(double rank){
+        double kel = rank*5/9;
+        return kel;
     }
 }
